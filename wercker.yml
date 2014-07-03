@@ -1,6 +1,6 @@
 box: wercker/default
 services:
-  - felix/elasticsearch@0.0.3
+  - wunki/elasticsearch@0.0.2
 build:
   steps:
     - script:
