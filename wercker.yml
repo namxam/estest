@@ -1,6 +1,6 @@
 box: wercker/default
 services:
-  - wunki/elasticsearch@0.0.2
+  - kkvlk/elasticsearch@1.0.1
 build:
   steps:
     - script:
@@ -16,5 +16,8 @@ build:
         name: Publish ES port
         code: echo $WERCKER_ELASTICSEARCH_PORT
     - script:
-        name: Test elastic search
+        name: Test elastic search 1
+        code: curl $WERCKER_ELASTICSEARCH_URL
+    - script:
+        name: Test elastic search 2
         code: curl "http://$WERCKER_ELASTICSEARCH_URL"
