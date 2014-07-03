@@ -1,0 +1,20 @@
+box: wercker/default
+services:
+  - felix/elasticsearch@0.0.3
+build:
+  steps:
+    - script:
+        name: Publish ES url
+        code: echo $WERCKER_ELASTICSEARCH_URL
+    - script:
+        name: Publish ES version
+        code: echo $WERCKER_ELASTICSEARCH_VERSION
+    - script:
+        name: Publish ES host
+        code: echo $WERCKER_ELASTICSEARCH_HOST
+    - script:
+        name: Publish ES port
+        code: echo $WERCKER_ELASTICSEARCH_PORT
+    - script:
+        name: Test elastic search
+        code: curl $WERCKER_ELASTICSEARCH_URL
